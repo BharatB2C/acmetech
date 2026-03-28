@@ -17,7 +17,7 @@ const products = [
     gradient: "from-blue-500 to-blue-600",
     bg: "bg-blue-50",
     iconColor: "text-blue-600",
-    href: "#",
+    href: "/products/onlinefreeinvoice",
   },
   {
     icon: Users,
@@ -30,7 +30,7 @@ const products = [
     gradient: "from-purple-500 to-violet-600",
     bg: "bg-purple-50",
     iconColor: "text-purple-600",
-    href: "#",
+    href: "/products/teamconnect",
   },
   {
     icon: Database,
@@ -43,7 +43,7 @@ const products = [
     gradient: "from-orange-500 to-amber-600",
     bg: "bg-orange-50",
     iconColor: "text-orange-600",
-    href: "#",
+    href: "/products/datum51",
   },
 ];
 

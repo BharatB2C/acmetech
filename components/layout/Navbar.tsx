@@ -7,15 +7,15 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const services = [
-  { label: "WordPress Development", href: "#wordpress" },
-  { label: "Shopify Development", href: "#shopify" },
-  { label: "Custom Development", href: "#custom-dev" },
+  { label: "WordPress Development", href: "/services/wordpress" },
+  { label: "Shopify Development", href: "/services/shopify" },
+  { label: "Custom Development", href: "/services/custom-development" },
 ];
 
 const products = [
-  { label: "OnlineFreeInvoice", href: "#products", desc: "Invoicing SaaS" },
-  { label: "TeamConnect", href: "#products", desc: "Shift Management" },
-  { label: "Datum51", href: "#products", desc: "Data System" },
+  { label: "OnlineFreeInvoice", href: "/products/onlinefreeinvoice", desc: "Invoicing SaaS" },
+  { label: "TeamConnect", href: "/products/teamconnect", desc: "Shift Management" },
+  { label: "Datum51", href: "/products/datum51", desc: "Data System" },
 ];
 
 interface DropdownProps {
@@ -103,7 +103,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
             <Link
-              href="#hero"
+              href="/"
               className="px-3 py-2 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors rounded-lg hover:bg-[#f5f5f7]"
             >
               Home
@@ -156,7 +156,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="#portfolio"
+              href="/#portfolio"
               className="px-3 py-2 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors rounded-lg hover:bg-[#f5f5f7]"
               onClick={closeAll}
             >
@@ -164,7 +164,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#contact"
+              href="/#contact"
               className="px-3 py-2 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors rounded-lg hover:bg-[#f5f5f7]"
               onClick={closeAll}
             >
@@ -172,7 +172,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#contact"
+              href="/#contact"
               className="ml-2 px-5 py-2 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] transition-colors"
               onClick={closeAll}
             >
@@ -202,7 +202,7 @@ export default function Navbar() {
             >
               <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
                 <Link
-                  href="#hero"
+                  href="/"
                   className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
                   onClick={closeAll}
                 >
@@ -236,21 +236,21 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="#portfolio"
+                  href="/#portfolio"
                   className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
                   onClick={closeAll}
                 >
                   Portfolio
                 </Link>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
                   onClick={closeAll}
                 >
                   Contact
                 </Link>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="mt-2 px-5 py-3 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] transition-colors text-center"
                   onClick={closeAll}
                 >
