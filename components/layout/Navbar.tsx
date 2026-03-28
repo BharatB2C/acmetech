@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,9 +22,10 @@ const products = [
 interface DropdownProps {
   items: { label: string; href: string; desc?: string }[];
   isOpen: boolean;
+  currentPath: string;
 }
 
-function Dropdown({ items, isOpen }: DropdownProps) {
+function Dropdown({ items, isOpen, currentPath }: DropdownProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -31,23 +33,34 @@ function Dropdown({ items, isOpen }: DropdownProps) {
           initial={{ opacity: 0, y: 8, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
-          transition={{ duration: 0.18, ease: "easeOut" }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-2xl bg-white/95 backdrop-blur-xl border border-[#d2d2d7] shadow-xl overflow-hidden z-50"
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-60 rounded-2xl bg-white border border-[#d2d2d7] shadow-2xl overflow-hidden z-50"
         >
-          {items.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="flex flex-col px-4 py-3 hover:bg-[#f5f5f7] transition-colors group"
-            >
-              <span className="text-sm font-semibold text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors">
-                {item.label}
-              </span>
-              {item.desc && (
-                <span className="text-xs text-[#6e6e73] mt-0.5">{item.desc}</span>
-              )}
-            </Link>
-          ))}
+          {items.map((item) => {
+            const active = currentPath === item.href;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={cn(
+                  "flex flex-col px-4 py-3 transition-colors group",
+                  active ? "bg-[#eff6ff]" : "hover:bg-[#f5f5f7]"
+                )}
+              >
+                <span
+                  className={cn(
+                    "text-sm font-semibold transition-colors",
+                    active ? "text-[#0071e3]" : "text-[#1d1d1f] group-hover:text-[#0071e3]"
+                  )}
+                >
+                  {item.label}
+                </span>
+                {item.desc && (
+                  <span className="text-xs text-[#6e6e73] mt-0.5">{item.desc}</span>
+                )}
+              </Link>
+            );
+          })}
         </motion.div>
       )}
     </AnimatePresence>
@@ -55,9 +68,16 @@ function Dropdown({ items, isOpen }: DropdownProps) {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Close menus on route change
+  useEffect(() => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -74,6 +94,17 @@ export default function Navbar() {
     setMobileOpen(false);
   };
 
+  const isServicesActive = pathname.startsWith("/services");
+  const isProductsActive = pathname.startsWith("/products");
+
+  const navLinkClass = (href: string) =>
+    cn(
+      "px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150",
+      pathname === href
+        ? "text-[#0071e3] bg-[#eff6ff]"
+        : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
+    );
+
   return (
     <>
       {/* Backdrop for dropdowns */}
@@ -85,13 +116,13 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
           scrolled
-            ? "bg-white/85 backdrop-blur-xl border-b border-[#d2d2d7]/60 shadow-sm"
-            : "bg-transparent"
+            ? "bg-white/90 backdrop-blur-xl border-b border-[#d2d2d7]/60 shadow-sm"
+            : "bg-white/70 backdrop-blur-md"
         )}
       >
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0" onClick={closeAll}>
+          <Link href="/" className="flex items-center gap-2 shrink-0 cursor-pointer" onClick={closeAll}>
             <div className="w-8 h-8 rounded-lg bg-[#0071e3] flex items-center justify-center">
               <span className="text-white text-sm font-bold">A</span>
             </div>
@@ -101,11 +132,8 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-1">
-            <Link
-              href="/"
-              className="px-3 py-2 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors rounded-lg hover:bg-[#f5f5f7]"
-            >
+          <div className="hidden lg:flex items-center gap-0.5">
+            <Link href="/" className={navLinkClass("/")}>
               Home
             </Link>
 
@@ -114,10 +142,10 @@ export default function Navbar() {
               <button
                 onClick={() => toggleDropdown("services")}
                 className={cn(
-                  "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                  openDropdown === "services"
-                    ? "text-[#0071e3] bg-[#f5f5f7]"
-                    : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7]"
+                  "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150 cursor-pointer",
+                  isServicesActive || openDropdown === "services"
+                    ? "text-[#0071e3] bg-[#eff6ff]"
+                    : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
                 )}
               >
                 Services
@@ -129,7 +157,7 @@ export default function Navbar() {
                   )}
                 />
               </button>
-              <Dropdown items={services} isOpen={openDropdown === "services"} />
+              <Dropdown items={services} isOpen={openDropdown === "services"} currentPath={pathname} />
             </div>
 
             {/* Products dropdown */}
@@ -137,10 +165,10 @@ export default function Navbar() {
               <button
                 onClick={() => toggleDropdown("products")}
                 className={cn(
-                  "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                  openDropdown === "products"
-                    ? "text-[#0071e3] bg-[#f5f5f7]"
-                    : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7]"
+                  "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150 cursor-pointer",
+                  isProductsActive || openDropdown === "products"
+                    ? "text-[#0071e3] bg-[#eff6ff]"
+                    : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
                 )}
               >
                 Products
@@ -152,28 +180,20 @@ export default function Navbar() {
                   )}
                 />
               </button>
-              <Dropdown items={products} isOpen={openDropdown === "products"} />
+              <Dropdown items={products} isOpen={openDropdown === "products"} currentPath={pathname} />
             </div>
 
-            <Link
-              href="/#portfolio"
-              className="px-3 py-2 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors rounded-lg hover:bg-[#f5f5f7]"
-              onClick={closeAll}
-            >
+            <Link href="/portfolio" className={navLinkClass("/portfolio")} onClick={closeAll}>
               Portfolio
             </Link>
 
-            <Link
-              href="/#contact"
-              className="px-3 py-2 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors rounded-lg hover:bg-[#f5f5f7]"
-              onClick={closeAll}
-            >
+            <Link href="/contact" className={navLinkClass("/contact")} onClick={closeAll}>
               Contact
             </Link>
 
             <Link
-              href="/#contact"
-              className="ml-2 px-5 py-2 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] transition-colors"
+              href="/get-started"
+              className="ml-3 px-5 py-2 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] active:scale-[0.97] transition-all duration-150 cursor-pointer"
               onClick={closeAll}
             >
               Get Started
@@ -182,7 +202,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded-lg text-[#1d1d1f] hover:bg-[#f5f5f7] transition-colors"
+            className="lg:hidden p-2 rounded-lg text-[#1d1d1f] hover:bg-[#eff6ff] hover:text-[#0071e3] transition-colors cursor-pointer"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -198,12 +218,15 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="lg:hidden overflow-hidden bg-white/95 backdrop-blur-xl border-t border-[#d2d2d7]/60"
+              className="lg:hidden overflow-hidden bg-white border-t border-[#d2d2d7]/60"
             >
               <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
                 <Link
                   href="/"
-                  className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
+                  className={cn(
+                    "px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                    pathname === "/" ? "text-[#0071e3] bg-[#eff6ff]" : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
+                  )}
                   onClick={closeAll}
                 >
                   Home
@@ -215,7 +238,10 @@ export default function Navbar() {
                   <Link
                     key={s.label}
                     href={s.href}
-                    className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
+                    className={cn(
+                      "px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                      pathname === s.href ? "text-[#0071e3] bg-[#eff6ff]" : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
+                    )}
                     onClick={closeAll}
                   >
                     {s.label}
@@ -228,7 +254,10 @@ export default function Navbar() {
                   <Link
                     key={p.label}
                     href={p.href}
-                    className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
+                    className={cn(
+                      "px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                      pathname === p.href ? "text-[#0071e3] bg-[#eff6ff]" : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
+                    )}
                     onClick={closeAll}
                   >
                     {p.label}
@@ -236,22 +265,28 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="/#portfolio"
-                  className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
+                  href="/portfolio"
+                  className={cn(
+                    "px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                    pathname === "/portfolio" ? "text-[#0071e3] bg-[#eff6ff]" : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
+                  )}
                   onClick={closeAll}
                 >
                   Portfolio
                 </Link>
                 <Link
-                  href="/#contact"
-                  className="px-3 py-2.5 text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#f5f5f7] rounded-lg transition-colors"
+                  href="/contact"
+                  className={cn(
+                    "px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
+                    pathname === "/contact" ? "text-[#0071e3] bg-[#eff6ff]" : "text-[#1d1d1f] hover:text-[#0071e3] hover:bg-[#eff6ff]"
+                  )}
                   onClick={closeAll}
                 >
                   Contact
                 </Link>
                 <Link
-                  href="/#contact"
-                  className="mt-2 px-5 py-3 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] transition-colors text-center"
+                  href="/get-started"
+                  className="mt-2 px-5 py-3 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] transition-colors text-center cursor-pointer"
                   onClick={closeAll}
                 >
                   Get Started
