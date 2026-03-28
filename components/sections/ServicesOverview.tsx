@@ -12,7 +12,7 @@ const services = [
     title: "WordPress Development",
     description:
       "Professional WordPress websites built for performance, SEO, and conversions. From business sites to full e-commerce platforms.",
-    href: "#wordpress",
+    href: "/services/wordpress",
     color: "from-blue-500 to-blue-600",
     bg: "bg-blue-50",
     iconColor: "text-blue-500",
@@ -22,7 +22,7 @@ const services = [
     title: "Shopify Development",
     description:
       "Custom Shopify stores and apps that drive sales. We build tailored shopping experiences and powerful integrations.",
-    href: "#shopify",
+    href: "/services/shopify",
     color: "from-green-500 to-emerald-600",
     bg: "bg-green-50",
     iconColor: "text-green-500",
@@ -32,7 +32,7 @@ const services = [
     title: "Custom Development",
     description:
       "Full-stack SaaS platforms, CRM systems, API integrations, and enterprise software built to scale with your business.",
-    href: "#custom-dev",
+    href: "/services/custom-development",
     color: "from-purple-500 to-violet-600",
     bg: "bg-purple-50",
     iconColor: "text-purple-500",

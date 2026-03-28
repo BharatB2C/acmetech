@@ -4,20 +4,20 @@ import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 const footerLinks = {
   company: [
     { label: "About Us", href: "#" },
-    { label: "Portfolio", href: "#portfolio" },
+    { label: "Portfolio", href: "/#portfolio" },
     { label: "Blog", href: "#" },
     { label: "Careers", href: "#" },
   ],
   services: [
-    { label: "WordPress Development", href: "#wordpress" },
-    { label: "Shopify Development", href: "#shopify" },
-    { label: "Custom Development", href: "#custom-dev" },
-    { label: "SaaS Development", href: "#custom-dev" },
+    { label: "WordPress Development", href: "/services/wordpress" },
+    { label: "Shopify Development", href: "/services/shopify" },
+    { label: "Custom Development", href: "/services/custom-development" },
+    { label: "SaaS Development", href: "/services/custom-development" },
   ],
   products: [
-    { label: "OnlineFreeInvoice", href: "#products" },
-    { label: "TeamConnect", href: "#products" },
-    { label: "Datum51", href: "#products" },
+    { label: "OnlineFreeInvoice", href: "/products/onlinefreeinvoice" },
+    { label: "TeamConnect", href: "/products/teamconnect" },
+    { label: "Datum51", href: "/products/datum51" },
   ],
 };
 
