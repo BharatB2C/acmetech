@@ -4,9 +4,9 @@ import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 const footerLinks = {
   company: [
     { label: "About Us", href: "#" },
-    { label: "Portfolio", href: "/#portfolio" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contact", href: "/contact" },
+    { label: "Get Started", href: "/get-started" },
   ],
   services: [
     { label: "WordPress Development", href: "/services/wordpress" },

@@ -57,6 +57,11 @@ body {
 .blob-2 { animation: blob-float-2 10s ease-in-out infinite; }
 .blob-3 { animation: blob-float-3 12s ease-in-out infinite; }
 
+/* Pointer cursor on all interactive elements */
+a, button, [role="button"], label[for], select, input[type="submit"], input[type="button"] {
+  cursor: pointer;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--color-surface); }

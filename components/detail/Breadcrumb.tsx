@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 interface BreadcrumbItem {
   label: string;
@@ -12,38 +12,37 @@ interface BreadcrumbProps {
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="max-w-7xl mx-auto px-6 pt-8 pb-0"
-    >
-      <div className="flex items-center gap-1.5 text-sm">
-        {/* Back link — first item */}
+    <div className="w-full bg-[#f5f5f7] border-b border-[#d2d2d7]">
+      <nav
+        aria-label="Breadcrumb"
+        className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 text-sm"
+      >
         <Link
           href={items[0]?.href ?? "/"}
-          className="inline-flex items-center gap-1 text-[#6e6e73] hover:text-[#0071e3] transition-colors font-medium"
+          className="flex items-center gap-1.5 text-[#0071e3] font-medium hover:underline shrink-0"
         >
-          <ChevronLeft size={14} />
+          <ArrowLeft size={14} strokeWidth={2.5} />
           {items[0]?.label}
         </Link>
 
         {items.slice(1).map((item, i) => (
-          <span key={i} className="flex items-center gap-1.5">
-            <ChevronRight size={14} className="text-[#d2d2d7]" />
+          <span key={i} className="flex items-center gap-2 min-w-0">
+            <span className="text-[#d2d2d7] select-none">/</span>
             {i === items.length - 2 ? (
-              <span className="text-[#1d1d1f] font-medium truncate max-w-[200px]">
+              <span className="text-[#1d1d1f] font-semibold truncate">
                 {item.label}
               </span>
             ) : (
               <Link
                 href={item.href}
-                className="text-[#6e6e73] hover:text-[#0071e3] transition-colors font-medium"
+                className="text-[#0071e3] hover:underline truncate"
               >
                 {item.label}
               </Link>
             )}
           </span>
         ))}
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
