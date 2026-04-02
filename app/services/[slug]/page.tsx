@@ -8,6 +8,7 @@ import FeatureGrid from "@/components/detail/FeatureGrid";
 import ProcessSteps from "@/components/detail/ProcessSteps";
 import PortfolioSlice from "@/components/detail/PortfolioSlice";
 import PricingSection from "@/components/detail/PricingSection";
+import CapabilitiesSection from "@/components/detail/CapabilitiesSection";
 import FaqAccordion from "@/components/detail/FaqAccordion";
 import JsonLd from "@/components/detail/JsonLd";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -156,6 +157,14 @@ export default async function ServicePage({
         title="Simple, Transparent Pricing"
         subtitle="Choose the engagement model that fits your project. All quotes are obligation-free."
       />
+
+      {service.capabilities && (
+        <CapabilitiesSection
+          groups={service.capabilities}
+          accentBg={service.accentBg}
+          accentColor={service.accentColor}
+        />
+      )}
 
       {/* FAQ */}
       <section className="py-24 px-6 bg-white">

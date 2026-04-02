@@ -8,6 +8,16 @@ import Link from "next/link";
 
 const services = [
   {
+    icon: Monitor,
+    title: "Static Website Creation",
+    description:
+      "Clean, hand-coded static websites that load in under a second. Landing pages, business sites, and portfolios starting from $99.",
+    href: "/services/static-website",
+    color: "from-cyan-500 to-teal-600",
+    bg: "bg-cyan-50",
+    iconColor: "text-cyan-500",
+  },
+  {
     icon: Globe,
     title: "WordPress Development",
     description:
@@ -36,16 +46,6 @@ const services = [
     color: "from-purple-500 to-violet-600",
     bg: "bg-purple-50",
     iconColor: "text-purple-500",
-  },
-  {
-    icon: Monitor,
-    title: "Static Website Creation",
-    description:
-      "Clean, hand-coded static websites that load in under a second. Landing pages, business sites, and portfolios starting from $99 USD.",
-    href: "/services/static-website",
-    color: "from-cyan-500 to-teal-600",
-    bg: "bg-cyan-50",
-    iconColor: "text-cyan-500",
   },
 ];
 
