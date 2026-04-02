@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" fill="none">
+  <!-- @ circle emblem -->
+  <g fill="#8B0000">
+    <!-- Outer circle arc -->
+    <path d="M60 10 C30 10 8 32 8 62 C8 92 30 114 60 114 C78 114 94 105 104 91 L92 83 C85 93 73 100 60 100 C38 100 22 84 22 62 C22 40 38 24 60 24 C82 24 98 40 98 62 C98 70 95 76 90 80 C86 83 81 82 81 76 L81 42 L67 42 L67 48 C62 44 56 42 49 42 C34 42 24 53 24 66 C24 79 34 90 49 90 C57 90 63 87 68 81 C72 87 79 90 87 90 C101 90 112 79 112 62 C112 32 90 10 60 10Z"/>
+    <!-- Inner circle/letter -->
+    <ellipse cx="51" cy="66" rx="13" ry="14"/>
+    <!-- "t" crossbar and stem override -->
+    <rect x="38" y="62" width="26" height="5" rx="2"/>
+  </g>
+  <!-- ACME text -->
+  <text x="130" y="58" font-family="Arial, sans-serif" font-weight="700" font-size="42" fill="#8B0000" letter-spacing="2">ACME</text>
+  <!-- TECHNOLOGIES text -->
+  <text x="130" y="90" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#8B0000" letter-spacing="4">TECHNOLOGIES</text>
+</svg>
