@@ -220,7 +220,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "Starter",
-        price: "Starting from $2,500",
+        price: "Starts from $199 USD",
         description: "Perfect for small businesses needing a professional online presence.",
         features: [
           "Up to 10 pages",
@@ -451,7 +451,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "Starter",
-        price: "Starting from $3,500",
+        price: "Starts from $299 USD",
         description: "Theme customization + store setup for businesses getting started on Shopify.",
         features: [
           "Theme customization",
@@ -683,7 +683,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "MVP",
-        price: "Starting from $15,000",
+        price: "Starts from $499 USD",
         description: "Single-module MVP to validate your concept and get to market fast.",
         features: [
           "Core feature set",

@@ -16,6 +16,7 @@ interface PricingSectionProps {
 
 function PricingCard({ tier, index }: { tier: AnyTier; index: number }) {
   const period = "period" in tier ? tier.period : undefined;
+  const ctaHref = index === 0 ? "/#contact" : "/get-started";
 
   return (
     <AnimatedSection delay={index * 0.1}>
@@ -88,7 +89,7 @@ function PricingCard({ tier, index }: { tier: AnyTier; index: number }) {
         </ul>
 
         <Link
-          href="/#contact"
+          href={ctaHref}
           className={`w-full text-center py-3 rounded-full font-semibold text-sm transition-all duration-200 active:scale-[0.98] ${
             tier.highlighted
               ? "bg-white text-[#0071e3] hover:bg-blue-50"
