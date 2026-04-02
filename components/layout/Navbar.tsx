@@ -8,10 +8,10 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const services = [
+  { label: "Static Website Creation", href: "/services/static-website" },
   { label: "WordPress Development", href: "/services/wordpress" },
   { label: "Shopify Development", href: "/services/shopify" },
   { label: "Custom Development", href: "/services/custom-development" },
-  { label: "Static Website Creation", href: "/services/static-website" },
 ];
 
 const products = [
