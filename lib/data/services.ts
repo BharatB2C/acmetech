@@ -220,7 +220,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "Starter",
-        price: "Starts from $199 USD",
+        price: "Starts from $199",
         description: "Perfect for small businesses needing a professional online presence.",
         features: [
           "Up to 10 pages",
@@ -231,38 +231,6 @@ const services: ServiceData[] = [
           "1 revision round",
         ],
         cta: "Get a Quote",
-        highlighted: false,
-      },
-      {
-        name: "Growth",
-        price: "Starting from $7,500",
-        description: "Full-featured site with e-commerce and advanced functionality.",
-        features: [
-          "Everything in Starter",
-          "WooCommerce integration",
-          "Custom plugin development",
-          "Advanced SEO package",
-          "Performance optimization",
-          "90-day post-launch support",
-          "Unlimited revisions",
-        ],
-        cta: "Start Project",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        description: "Enterprise-grade sites with complex integrations and dedicated support.",
-        features: [
-          "Everything in Growth",
-          "Multi-site network",
-          "ERP / CRM integrations",
-          "Custom checkout flows",
-          "Priority support SLA",
-          "Quarterly strategy calls",
-          "Dedicated project manager",
-        ],
-        cta: "Contact Us",
         highlighted: false,
       },
     ],
@@ -451,7 +419,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "Starter",
-        price: "Starts from $299 USD",
+        price: "Starts from $299",
         description: "Theme customization + store setup for businesses getting started on Shopify.",
         features: [
           "Theme customization",
@@ -462,38 +430,6 @@ const services: ServiceData[] = [
           "Staff training session",
         ],
         cta: "Get a Quote",
-        highlighted: false,
-      },
-      {
-        name: "Growth",
-        price: "Starting from $9,000",
-        description: "Custom theme + custom app for stores needing competitive differentiation.",
-        features: [
-          "Everything in Starter",
-          "Custom theme from scratch",
-          "Custom Shopify app",
-          "Third-party integrations",
-          "CRO optimization pass",
-          "90-day support",
-          "Analytics configuration",
-        ],
-        cta: "Start Project",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        description: "Headless Shopify Plus builds with full integrations for high-volume stores.",
-        features: [
-          "Everything in Growth",
-          "Shopify Plus setup",
-          "Headless Next.js frontend",
-          "ERP / CRM / 3PL integrations",
-          "Multi-currency / multi-region",
-          "Priority support SLA",
-          "Dedicated project manager",
-        ],
-        cta: "Contact Us",
         highlighted: false,
       },
     ],
@@ -683,7 +619,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "MVP",
-        price: "Starts from $499 USD",
+        price: "Starts from $499",
         description: "Single-module MVP to validate your concept and get to market fast.",
         features: [
           "Core feature set",
@@ -694,38 +630,6 @@ const services: ServiceData[] = [
           "30-day post-launch support",
         ],
         cta: "Get a Quote",
-        highlighted: false,
-      },
-      {
-        name: "Product",
-        price: "Starting from $40,000",
-        description: "Full product with integrations, analytics, and production-grade infrastructure.",
-        features: [
-          "Everything in MVP",
-          "Third-party integrations",
-          "Analytics & reporting",
-          "Role-based access control",
-          "CI/CD pipeline",
-          "90-day support",
-          "Documentation package",
-        ],
-        cta: "Start Project",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        description: "Multi-system enterprise builds with dedicated team and SLA-backed support.",
-        features: [
-          "Everything in Product",
-          "Multi-module architecture",
-          "ERP / CRM integrations",
-          "SOC 2 alignment",
-          "Priority SLA support",
-          "Dedicated project team",
-          "Quarterly architecture review",
-        ],
-        cta: "Contact Us",
         highlighted: false,
       },
     ],
@@ -767,6 +671,244 @@ const services: ServiceData[] = [
         "API development",
         "enterprise software",
         "full-stack development",
+      ],
+    },
+  },
+];
+
+  {
+    slug: "static-website",
+    name: "Static Website Creation",
+    tagline: "Clean, Fast Websites Without the Complexity",
+    description:
+      "Professionally designed static websites that load instantly, rank well, and never need a database. Perfect for businesses, portfolios, and landing pages that need to look great and perform even better.",
+    heroGradient: "from-cyan-500 to-teal-600",
+    accentColor: "text-cyan-400",
+    accentBg: "bg-cyan-50",
+    iconName: "Monitor",
+    stats: [
+      { value: "< 1s", label: "Avg Load Time" },
+      { value: "100", label: "Lighthouse Score" },
+      { value: "72hr", label: "Avg Turnaround" },
+      { value: "Zero", label: "Hosting Complexity" },
+    ],
+    overview: {
+      heading: "Simple, Fast Websites Done Right",
+      body: "Not every business needs a CMS, a database, or a monthly maintenance retainer. Static websites are the most performant, most secure, and most cost-effective option for businesses that need a polished online presence without the overhead. We design and build clean, hand-coded static sites that load in under a second on mobile, score 100 on Lighthouse, and can be hosted for free on platforms like Vercel, Netlify, or GitHub Pages. Every site is fully responsive, SEO-ready, and delivered with clean code you own outright.",
+    },
+    features: [
+      {
+        icon: "Zap",
+        title: "Lightning-Fast Performance",
+        description:
+          "No server-side rendering, no database queries — just pre-built HTML, CSS, and minimal JavaScript delivered instantly from a CDN.",
+      },
+      {
+        icon: "Search",
+        title: "SEO-Optimized Structure",
+        description:
+          "Semantic HTML5, Open Graph tags, structured data, XML sitemaps, and canonical URLs baked in so search engines love your site from day one.",
+      },
+      {
+        icon: "Smartphone",
+        title: "Fully Responsive Design",
+        description:
+          "Every layout is designed mobile-first and tested across iOS, Android, and all major desktop browsers for a flawless experience on any device.",
+      },
+      {
+        icon: "Shield",
+        title: "Inherently Secure",
+        description:
+          "No database, no login forms, no plugins to patch. Static sites have a near-zero attack surface compared to dynamic CMS alternatives.",
+      },
+      {
+        icon: "Globe",
+        title: "Custom Domain & Hosting Setup",
+        description:
+          "We configure your domain, SSL certificate, and CDN deployment on your preferred hosting platform — ready to go live on day one.",
+      },
+      {
+        icon: "Palette",
+        title: "Professional Visual Design",
+        description:
+          "Pixel-perfect layouts with your brand colours, typography, and imagery — designed to build trust and convert visitors into leads.",
+      },
+    ],
+    process: [
+      {
+        number: 1,
+        title: "Brief",
+        description:
+          "You share your goals, brand assets, copy, and any design preferences. We align on scope and deliverables before work begins.",
+      },
+      {
+        number: 2,
+        title: "Design",
+        description:
+          "We create a high-fidelity mockup of your site. You review, request tweaks, and approve before we write a single line of code.",
+      },
+      {
+        number: 3,
+        title: "Build",
+        description:
+          "We hand-code the approved design into a fast, clean static site with all SEO metadata and performance optimizations in place.",
+      },
+      {
+        number: 4,
+        title: "Review",
+        description:
+          "You review the live staging URL on desktop and mobile. We apply your feedback and run a final quality check.",
+      },
+      {
+        number: 5,
+        title: "Launch",
+        description:
+          "We deploy to your hosting platform, configure your domain and SSL, and hand over the source code and documentation.",
+      },
+    ],
+    differentiators: [
+      {
+        title: "Hand-Coded, No Page Builders",
+        description:
+          "We write clean HTML, CSS, and JavaScript — no Wix, no Squarespace, no bloated drag-and-drop tools. You get lean, maintainable code.",
+      },
+      {
+        title: "100 Lighthouse Scores",
+        description:
+          "Performance, accessibility, best practices, and SEO — we target perfect scores on every delivery because fast sites rank better and convert more.",
+      },
+      {
+        title: "Free Hosting Options",
+        description:
+          "Static sites can be hosted for free on Vercel, Netlify, or GitHub Pages. We handle the setup so you pay nothing for hosting.",
+      },
+      {
+        title: "Fast Turnaround",
+        description:
+          "Most single-page projects are completed within 72 hours. Multi-page sites typically ship within one week of design approval.",
+      },
+    ],
+    portfolioItems: [
+      {
+        title: "Professional Services Landing Page",
+        description:
+          "Single-page site for a consulting firm — hero, services, testimonials, and contact section with a 0.6s load time.",
+        tags: ["HTML", "CSS", "JavaScript", "Netlify"],
+        gradient: "from-cyan-500 to-teal-600",
+        icon: "💼",
+        category: "Landing Page",
+      },
+      {
+        title: "Restaurant & Café Website",
+        description:
+          "Five-page static site with menu, gallery, reservations link, and location map for a local restaurant group.",
+        tags: ["HTML", "CSS", "JavaScript", "Vercel"],
+        gradient: "from-orange-400 to-pink-500",
+        icon: "🍽️",
+        category: "Business Website",
+      },
+      {
+        title: "Creative Portfolio",
+        description:
+          "Ten-page portfolio for a freelance photographer with a full-screen image gallery and inquiry form.",
+        tags: ["HTML", "CSS", "Vanilla JS", "GitHub Pages"],
+        gradient: "from-violet-500 to-purple-700",
+        icon: "📷",
+        category: "Portfolio",
+      },
+    ],
+    pricing: [
+      {
+        name: "1 Page",
+        price: "$99",
+        description: "A single high-impact landing page or digital business card.",
+        features: [
+          "1 fully custom page",
+          "Mobile-responsive design",
+          "Contact form integration",
+          "Basic SEO setup",
+          "SSL & hosting configuration",
+          "72-hour delivery",
+        ],
+        cta: "Get Started",
+        highlighted: false,
+      },
+      {
+        name: "5–7 Pages",
+        price: "$199",
+        description: "A complete small business website with all the essentials.",
+        features: [
+          "Up to 7 pages",
+          "Everything in 1 Page",
+          "Services or product listings",
+          "About & team section",
+          "Blog-ready structure",
+          "Google Analytics setup",
+          "1 revision round",
+        ],
+        cta: "Get a Quote",
+        highlighted: true,
+      },
+      {
+        name: "7–10 Pages",
+        price: "$299",
+        description: "A full business website with rich content and polished UX.",
+        features: [
+          "Up to 10 pages",
+          "Everything in 5–7 Pages",
+          "Custom animations",
+          "Portfolio or gallery section",
+          "Advanced SEO package",
+          "Performance audit report",
+          "2 revision rounds",
+        ],
+        cta: "Get a Quote",
+        highlighted: false,
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a static website?",
+        answer:
+          "A static website is built from pre-rendered HTML, CSS, and JavaScript files with no server-side database or CMS. Pages load directly from a CDN, making them extremely fast, secure, and cheap to host. They're ideal for businesses, portfolios, and landing pages where content doesn't need to change daily.",
+      },
+      {
+        question: "Can I update the content myself after launch?",
+        answer:
+          "Yes. We can integrate a lightweight headless CMS (like Contentlayer or Decap CMS) so you can edit text and images through a simple interface without touching code. Alternatively, we can handle content updates for you on a per-request basis.",
+      },
+      {
+        question: "How fast will my site be?",
+        answer:
+          "Static sites delivered via CDN typically load in under 1 second. We optimize all images, minify assets, and target a Lighthouse performance score of 95–100 on every project.",
+      },
+      {
+        question: "Where will my site be hosted?",
+        answer:
+          "We recommend Vercel or Netlify — both offer generous free tiers and global CDN delivery. We configure the deployment and connect your custom domain as part of the project. You can also host on GitHub Pages, Cloudflare Pages, or your own server.",
+      },
+      {
+        question: "What do I need to provide?",
+        answer:
+          "You'll need to provide your written content (text for each page), logo, brand colours, and any images you want to use. If you need copywriting or photography sourcing, we can help with that at an additional cost.",
+      },
+      {
+        question: "Do you offer ongoing support after launch?",
+        answer:
+          "All projects include a 14-day post-launch window for bug fixes. Beyond that, we offer content update packages and can add pages or sections on a per-request basis.",
+      },
+    ],
+    seo: {
+      title: "Static Website Creation | Acme Technologies",
+      description:
+        "Fast, clean, hand-coded static websites starting from $99 USD. Landing pages, small business sites, and portfolios built for performance and SEO.",
+      keywords: [
+        "static website design",
+        "landing page development",
+        "fast website",
+        "small business website",
+        "affordable website Canada",
+        "HTML CSS website",
       ],
     },
   },
