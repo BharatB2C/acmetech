@@ -123,13 +123,8 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0 cursor-pointer" onClick={closeAll}>
-            <div className="w-8 h-8 rounded-lg bg-[#0071e3] flex items-center justify-center">
-              <span className="text-white text-sm font-bold">A</span>
-            </div>
-            <span className="text-[#1d1d1f] font-semibold text-[15px] hidden sm:block">
-              Acme Technologies
-            </span>
+          <Link href="/" className="flex items-center shrink-0 cursor-pointer" onClick={closeAll}>
+            <img src="/logo.svg" alt="Acme Technologies" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop nav */}
