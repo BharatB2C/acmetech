@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function CTA() {
   return (
-    <section className="py-24 px-6 bg-[#1d1d1f]">
+    <section id="contact" className="scroll-mt-20 py-24 px-6 bg-[#1d1d1f]">
       <div className="max-w-4xl mx-auto text-center">
         <AnimatedSection>
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-4">
@@ -29,14 +29,14 @@ export default function CTA() {
         <AnimatedSection delay={0.15}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#contact"
+              href="/contact"
               className="px-8 py-4 bg-[#0071e3] text-white font-semibold rounded-full hover:bg-[#0077ed] active:scale-[0.98] transition-all duration-200 text-base inline-flex items-center gap-2 shadow-lg shadow-blue-900/30"
             >
               Contact Us
               <ArrowRight size={16} />
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-full hover:border-white/50 hover:bg-white/5 active:scale-[0.98] transition-all duration-200 text-base inline-flex items-center gap-2"
             >
               <MessageSquare size={16} />
