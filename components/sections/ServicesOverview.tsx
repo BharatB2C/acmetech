@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, ShoppingBag, Code2, ArrowRight } from "lucide-react";
+import { Globe, ShoppingBag, Code2, ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Link from "next/link";
@@ -72,10 +72,10 @@ export default function ServicesOverview() {
                   </p>
                   <Link
                     href={service.href}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0071e3] group-hover:gap-3 transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-[#d2d2d7] text-[#1d1d1f] text-sm font-semibold rounded-full hover:border-[#0071e3] hover:text-[#0071e3] transition-all duration-200 self-start"
                   >
-                    Learn more
-                    <ArrowRight size={14} />
+                    View Service
+                    <ArrowUpRight size={14} />
                   </Link>
                 </motion.div>
               </AnimatedSection>
