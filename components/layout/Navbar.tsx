@@ -11,6 +11,7 @@ const services = [
   { label: "WordPress Development", href: "/services/wordpress" },
   { label: "Shopify Development", href: "/services/shopify" },
   { label: "Custom Development", href: "/services/custom-development" },
+  { label: "Static Website Creation", href: "/services/static-website" },
 ];
 
 const products = [

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, ShoppingBag, Code2, ArrowUpRight } from "lucide-react";
+import { Globe, ShoppingBag, Code2, Monitor, ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Link from "next/link";
@@ -37,6 +37,16 @@ const services = [
     bg: "bg-purple-50",
     iconColor: "text-purple-500",
   },
+  {
+    icon: Monitor,
+    title: "Static Website Creation",
+    description:
+      "Clean, hand-coded static websites that load in under a second. Landing pages, business sites, and portfolios starting from $99 USD.",
+    href: "/services/static-website",
+    color: "from-cyan-500 to-teal-600",
+    bg: "bg-cyan-50",
+    iconColor: "text-cyan-500",
+  },
 ];
 
 export default function ServicesOverview() {
@@ -49,7 +59,7 @@ export default function ServicesOverview() {
           subtitle="From your first website to a complete digital ecosystem — we build technology that scales with your ambitions."
         />
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
