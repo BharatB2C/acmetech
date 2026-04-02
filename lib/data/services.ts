@@ -674,7 +674,6 @@ const services: ServiceData[] = [
       ],
     },
   },
-];
 
   {
     slug: "static-website",
