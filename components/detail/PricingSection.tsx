@@ -109,20 +109,47 @@ export default function PricingSection({
   title = "Simple, Transparent Pricing",
   subtitle = "Choose the plan that fits your needs. All plans include our core quality standards.",
 }: PricingSectionProps) {
+  const isSingle = tiers.length === 1;
+
   return (
     <section className="py-24 px-6 bg-[#f5f5f7]">
       <div className="max-w-5xl mx-auto">
         <SectionHeader label={label} title={title} subtitle={subtitle} />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+        <div
+          className={`mt-14 ${
+            isSingle
+              ? "flex justify-center"
+              : "grid grid-cols-1 md:grid-cols-3 gap-5 items-start"
+          }`}
+        >
           {tiers.map((tier, i) => (
-            <PricingCard key={tier.name} tier={tier} index={i} />
+            <div key={tier.name} className={isSingle ? "w-full max-w-sm" : undefined}>
+              <PricingCard tier={tier} index={i} />
+            </div>
           ))}
         </div>
 
+        {isSingle && (
+          <AnimatedSection delay={0.2} className="mt-10">
+            <div className="rounded-3xl border border-[#d2d2d7] bg-white p-8 text-center max-w-2xl mx-auto">
+              <p className="text-lg font-semibold text-[#1d1d1f] mb-2">Need something bigger?</p>
+              <p className="text-[#6e6e73] text-sm mb-6">
+                Every project is different. Contact us and we'll put together a custom quote tailored to your requirements.
+              </p>
+              <Link
+                href="/get-started"
+                className="inline-block px-8 py-3 bg-[#0071e3] text-white text-sm font-semibold rounded-full hover:bg-[#0077ed] transition-all duration-200 active:scale-[0.97]"
+              >
+                Contact Us for a Quote
+              </Link>
+            </div>
+          </AnimatedSection>
+        )}
+
         <AnimatedSection delay={0.3} className="mt-8 text-center text-sm text-[#6e6e73]">
-          All prices in CAD. Custom quotes available for projects outside standard tiers.
-          <Link href="/#contact" className="text-[#0071e3] hover:underline ml-1">
+          Custom quotes available for any project scope.{" "}
+          <Link href="/#contact" className="text-[#0071e3] hover:underline">
             Contact us
           </Link>
           .

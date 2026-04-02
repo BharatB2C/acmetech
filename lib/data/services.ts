@@ -220,7 +220,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "Starter",
-        price: "Starts from $199 USD",
+        price: "Starts from $199",
         description: "Perfect for small businesses needing a professional online presence.",
         features: [
           "Up to 10 pages",
@@ -231,38 +231,6 @@ const services: ServiceData[] = [
           "1 revision round",
         ],
         cta: "Get a Quote",
-        highlighted: false,
-      },
-      {
-        name: "Growth",
-        price: "Starting from $7,500",
-        description: "Full-featured site with e-commerce and advanced functionality.",
-        features: [
-          "Everything in Starter",
-          "WooCommerce integration",
-          "Custom plugin development",
-          "Advanced SEO package",
-          "Performance optimization",
-          "90-day post-launch support",
-          "Unlimited revisions",
-        ],
-        cta: "Start Project",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        description: "Enterprise-grade sites with complex integrations and dedicated support.",
-        features: [
-          "Everything in Growth",
-          "Multi-site network",
-          "ERP / CRM integrations",
-          "Custom checkout flows",
-          "Priority support SLA",
-          "Quarterly strategy calls",
-          "Dedicated project manager",
-        ],
-        cta: "Contact Us",
         highlighted: false,
       },
     ],
@@ -451,7 +419,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "Starter",
-        price: "Starts from $299 USD",
+        price: "Starts from $299",
         description: "Theme customization + store setup for businesses getting started on Shopify.",
         features: [
           "Theme customization",
@@ -462,38 +430,6 @@ const services: ServiceData[] = [
           "Staff training session",
         ],
         cta: "Get a Quote",
-        highlighted: false,
-      },
-      {
-        name: "Growth",
-        price: "Starting from $9,000",
-        description: "Custom theme + custom app for stores needing competitive differentiation.",
-        features: [
-          "Everything in Starter",
-          "Custom theme from scratch",
-          "Custom Shopify app",
-          "Third-party integrations",
-          "CRO optimization pass",
-          "90-day support",
-          "Analytics configuration",
-        ],
-        cta: "Start Project",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        description: "Headless Shopify Plus builds with full integrations for high-volume stores.",
-        features: [
-          "Everything in Growth",
-          "Shopify Plus setup",
-          "Headless Next.js frontend",
-          "ERP / CRM / 3PL integrations",
-          "Multi-currency / multi-region",
-          "Priority support SLA",
-          "Dedicated project manager",
-        ],
-        cta: "Contact Us",
         highlighted: false,
       },
     ],
@@ -683,7 +619,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "MVP",
-        price: "Starts from $499 USD",
+        price: "Starts from $499",
         description: "Single-module MVP to validate your concept and get to market fast.",
         features: [
           "Core feature set",
@@ -694,38 +630,6 @@ const services: ServiceData[] = [
           "30-day post-launch support",
         ],
         cta: "Get a Quote",
-        highlighted: false,
-      },
-      {
-        name: "Product",
-        price: "Starting from $40,000",
-        description: "Full product with integrations, analytics, and production-grade infrastructure.",
-        features: [
-          "Everything in MVP",
-          "Third-party integrations",
-          "Analytics & reporting",
-          "Role-based access control",
-          "CI/CD pipeline",
-          "90-day support",
-          "Documentation package",
-        ],
-        cta: "Start Project",
-        highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        description: "Multi-system enterprise builds with dedicated team and SLA-backed support.",
-        features: [
-          "Everything in Product",
-          "Multi-module architecture",
-          "ERP / CRM integrations",
-          "SOC 2 alignment",
-          "Priority SLA support",
-          "Dedicated project team",
-          "Quarterly architecture review",
-        ],
-        cta: "Contact Us",
         highlighted: false,
       },
     ],
@@ -916,7 +820,7 @@ const services: ServiceData[] = [
     pricing: [
       {
         name: "1 Page",
-        price: "$99 USD",
+        price: "$99",
         description: "A single high-impact landing page or digital business card.",
         features: [
           "1 fully custom page",
@@ -931,7 +835,7 @@ const services: ServiceData[] = [
       },
       {
         name: "5–7 Pages",
-        price: "$199 USD",
+        price: "$199",
         description: "A complete small business website with all the essentials.",
         features: [
           "Up to 7 pages",
@@ -947,7 +851,7 @@ const services: ServiceData[] = [
       },
       {
         name: "7–10 Pages",
-        price: "$299 USD",
+        price: "$299",
         description: "A full business website with rich content and polished UX.",
         features: [
           "Up to 10 pages",
