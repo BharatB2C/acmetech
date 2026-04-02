@@ -7,44 +7,48 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const projects = [
   {
-    title: "InnProfessionals",
+    title: "Spark Taxation",
     description:
-      "A full-featured SaaS platform for hospitality professionals — booking management, staff scheduling, and revenue tracking in one unified dashboard.",
-    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-    gradient: "from-blue-500 via-blue-600 to-indigo-700",
-    category: "SaaS Platform",
-    icon: "💼",
+      "Professional taxation and business advisory firm in Australia — tax planning, annual returns, and financial growth strategies for individuals and SMBs.",
+    tags: ["WordPress", "Tax Advisory", "Finance"],
+    gradient: "from-blue-600 via-blue-700 to-indigo-800",
+    category: "Professional Services",
+    icon: "💰",
     featured: true,
+    url: "https://sparktaxation.com.au/",
   },
   {
-    title: "Shopify Custom App",
+    title: "Randhawa Trucking Inc.",
     description:
-      "A custom Shopify app enabling merchants to sync inventory across multiple warehouses with real-time analytics and automated reorder triggers.",
-    tags: ["Shopify API", "React", "Node.js"],
-    gradient: "from-green-500 via-emerald-500 to-teal-600",
-    category: "Shopify App",
-    icon: "🛍️",
+      "Full-featured trucking website for a Cambridge, Ontario freight company — FTL/LTL shipping, temperature-controlled transport, and specialized hauling across Canada.",
+    tags: ["WordPress", "Fleet Management", "Freight"],
+    gradient: "from-slate-600 via-gray-600 to-slate-800",
+    category: "Logistics",
+    icon: "🚛",
     featured: false,
+    url: "https://randhawatruckinginc.ca/",
   },
   {
-    title: "Enterprise CRM",
+    title: "Dentistry at Queenston",
     description:
-      "A custom CRM system built for a mid-size enterprise — contact management, pipeline tracking, email integration, and team collaboration tools.",
-    tags: ["Laravel", "Vue.js", "MySQL", "REST API"],
-    gradient: "from-purple-500 via-violet-500 to-purple-700",
-    category: "Custom CRM",
-    icon: "📊",
+      "Family dental practice in Stoney Creek, Ontario — online booking, direct insurance billing, evening and weekend appointments, and a full service menu for all ages.",
+    tags: ["WordPress", "Booking", "Healthcare"],
+    gradient: "from-teal-400 via-cyan-500 to-sky-500",
+    category: "Healthcare",
+    icon: "🦷",
     featured: false,
+    url: "https://dentistryatqueenston.ca/",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Felicitous Nutrition",
     description:
-      "A high-volume e-commerce platform with custom product configurator, tiered pricing, B2B portal, and advanced filtering for 10,000+ SKUs.",
-    tags: ["WooCommerce", "PHP", "React", "MySQL"],
-    gradient: "from-orange-500 via-amber-500 to-yellow-500",
+      "Health and fitness Shopify store in India selling authentic protein powders, mass gainers, and supplements from Indian and international brands.",
+    tags: ["Shopify", "E-Commerce", "Health & Fitness"],
+    gradient: "from-orange-500 via-amber-500 to-yellow-400",
     category: "E-Commerce",
-    icon: "🛒",
+    icon: "💪",
     featured: true,
+    url: "https://felicitousnutrition.com/",
   },
 ];
 
@@ -56,6 +60,7 @@ interface ProjectCardProps {
 function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <AnimatedSection delay={index * 0.08}>
+      <a href={project.url} target="_blank" rel="noopener noreferrer" className="block">
       <motion.div
         whileHover={{ y: -6, scale: 1.01 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
@@ -121,6 +126,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
       </motion.div>
+      </a>
     </AnimatedSection>
   );
 }
@@ -143,13 +149,13 @@ export default function Portfolio() {
 
         <AnimatedSection delay={0.3} className="mt-12 text-center">
           <p className="text-[#6e6e73] text-sm mb-4">
-            Want to see more of our work?
+            Want to see all 13 of our client projects?
           </p>
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#1d1d1f] text-[#1d1d1f] font-semibold rounded-full hover:bg-[#1d1d1f] hover:text-white transition-all duration-200"
+            href="/portfolio"
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#1d1d1f] text-[#1d1d1f] font-semibold rounded-full hover:bg-[#1d1d1f] hover:text-white transition-all duration-200 cursor-pointer"
           >
-            Get in Touch
+            View Full Portfolio
             <ArrowUpRight size={16} />
           </a>
         </AnimatedSection>
