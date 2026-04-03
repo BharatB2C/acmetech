@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,9 +13,8 @@ const projects = [
     description:
       "Professional taxation and business advisory firm helping individuals and SMBs navigate the Australian tax system — strategic tax planning, annual returns, and financial growth consulting.",
     tags: ["WordPress", "Tax Advisory", "Finance"],
-    gradient: "from-blue-600 via-blue-700 to-indigo-800",
     category: "Professional",
-    icon: "💰",
+    image: "/spark_taxation.png",
     url: "https://sparktaxation.com.au/",
   },
   {
@@ -23,9 +23,8 @@ const projects = [
     description:
       "Local Italian-style eatery in Brantford known for fresh-made daily dough, signature and build-your-own pizzas, gluten-free options, and a full online ordering system for delivery and pickup.",
     tags: ["WordPress", "Online Ordering", "Local Business"],
-    gradient: "from-red-500 via-orange-500 to-red-600",
     category: "Lifestyle",
-    icon: "🍕",
+    image: "/city_south.png",
     url: "https://citysouthbrantford.ca/",
   },
   {
@@ -34,9 +33,8 @@ const projects = [
     description:
       "20+ year Australian custom joinery company offering full-service kitchen renovations, custom wardrobes, TV units, and decorative wall panels — from design consultation to professional installation.",
     tags: ["WordPress", "Portfolio", "Home Improvement"],
-    gradient: "from-amber-600 via-yellow-600 to-amber-700",
     category: "Lifestyle",
-    icon: "🪵",
+    image: "/cabinet.png",
     url: "https://a1cabinetsdesign.com.au/",
   },
   {
@@ -45,9 +43,8 @@ const projects = [
     description:
       "Full-service dental clinic offering preventative, restorative, and emergency dental care for all ages using modern technology, with online booking and personalized treatment plans.",
     tags: ["WordPress", "Booking System", "Healthcare"],
-    gradient: "from-sky-400 via-cyan-500 to-blue-600",
     category: "Healthcare",
-    icon: "🦷",
+    image: "/DEntal_clinic.png",
     url: "https://bentondentalclinic.ca/",
   },
   {
@@ -56,9 +53,8 @@ const projects = [
     description:
       "Premium unisex salon in Auckland offering professional hair styling, colouring, threading, facials, and nail care in a luxurious atmosphere using salon-grade products.",
     tags: ["WordPress", "Beauty", "Appointments"],
-    gradient: "from-pink-500 via-rose-500 to-pink-600",
     category: "Lifestyle",
-    icon: "✂️",
+    image: "/mr_mrs_salon.png",
     url: "https://mmsalon.co.nz/",
   },
   {
@@ -67,9 +63,8 @@ const projects = [
     description:
       "OSCAR-approved out-of-school care provider in Hamilton delivering structured before/after school and holiday programs — arts, sports, and educational activities for children of working parents.",
     tags: ["WordPress", "Childcare", "OSCAR Program"],
-    gradient: "from-green-400 via-emerald-500 to-teal-500",
     category: "Lifestyle",
-    icon: "🧒",
+    image: "/kidventure.png",
     url: "https://www.kidventure.co.nz/",
   },
   {
@@ -78,9 +73,8 @@ const projects = [
     description:
       "Cambridge-based freight transport company offering FTL/LTL shipments, temperature-controlled transport for perishables, and specialized window & door hauling across Canada with real-time tracking.",
     tags: ["WordPress", "Fleet Management", "Freight"],
-    gradient: "from-slate-600 via-gray-600 to-slate-800",
     category: "Logistics & Trade",
-    icon: "🚛",
+    image: "/Randhawa_Trucking_inc.png",
     url: "https://randhawatruckinginc.ca/",
   },
   {
@@ -89,9 +83,8 @@ const projects = [
     description:
       "Elite London security firm staffed by former military and special forces personnel, providing global close protection, residential security, secure transportation, and defensive driving training.",
     tags: ["WordPress", "Security Services", "Corporate"],
-    gradient: "from-gray-700 via-slate-700 to-gray-900",
     category: "Professional",
-    icon: "🛡️",
+    image: "/british_security.png",
     url: "https://britsprotectionsecurity.com/",
   },
   {
@@ -100,9 +93,8 @@ const projects = [
     description:
       "UK-based logistics company offering flexible freight coordination, warehousing support, and supply chain management solutions to help commercial clients navigate modern distribution challenges.",
     tags: ["WordPress", "Supply Chain", "Freight"],
-    gradient: "from-blue-700 via-indigo-700 to-violet-700",
     category: "Logistics & Trade",
-    icon: "📦",
+    image: "/Baz_logistic_(2).png",
     url: "https://bazlogistics.co.uk/",
   },
   {
@@ -111,9 +103,8 @@ const projects = [
     description:
       "Family dental practice led by Dr. Karamjot Kaur offering pediatric dentistry, cosmetic treatments, direct insurance billing, and evening/weekend appointments for the Stoney Creek community.",
     tags: ["WordPress", "Booking", "Family Dentistry"],
-    gradient: "from-teal-400 via-cyan-500 to-sky-500",
     category: "Healthcare",
-    icon: "🦷",
+    image: "/Dentistry.png",
     url: "https://dentistryatqueenston.ca/",
   },
   {
@@ -122,9 +113,8 @@ const projects = [
     description:
       "Health and fitness e-commerce store selling authentic protein powders, mass gainers, creatine, and amino acids from Indian and international brands — a trusted hub for 360-degree fitness nutrition.",
     tags: ["Shopify", "E-Commerce", "Health & Fitness"],
-    gradient: "from-orange-500 via-amber-500 to-yellow-400",
     category: "Lifestyle",
-    icon: "💪",
+    image: "/feclitious_nutrition.png",
     url: "https://felicitousnutrition.com/",
   },
   {
@@ -133,9 +123,8 @@ const projects = [
     description:
       "Independent hardware and safety supply store in Kamloops serving DIY homeowners and contractors with hand tools, air tools, fasteners, hard-to-find items, and industrial safety gear.",
     tags: ["WordPress", "Local Business", "Tools & Safety"],
-    gradient: "from-red-600 via-orange-600 to-amber-600",
     category: "Logistics & Trade",
-    icon: "🔧",
+    image: "/Prime_plus_hardware.png",
     url: "https://primeplushardware.com/",
   },
   {
@@ -144,9 +133,8 @@ const projects = [
     description:
       "Century 21 Realtor portal for Kamloops and the Thompson-Okanagan region — property listings, mortgage calculators, home evaluation forms, and first-time buyer guides all in one place.",
     tags: ["WordPress", "Real Estate", "MLS"],
-    gradient: "from-emerald-500 via-green-600 to-emerald-700",
     category: "Professional",
-    icon: "🏠",
+    image: "/deep_brar.png",
     url: "https://deepbrar.ca/",
   },
 ];
@@ -178,28 +166,19 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           transition={{ duration: 0.25, ease: "easeOut" }}
           className="group relative bg-white rounded-3xl overflow-hidden border border-[#d2d2d7] shadow-sm hover:shadow-2xl transition-shadow duration-300 cursor-pointer h-full"
         >
-          {/* Gradient placeholder header */}
-          <div
-            className={`relative h-48 bg-gradient-to-br ${project.gradient} flex items-end p-6 overflow-hidden`}
-          >
-            {/* Grid pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id={`grid-p-${index}`} width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill={`url(#grid-p-${index})`} />
-              </svg>
-            </div>
-
-            {/* Icon */}
-            <div className="absolute top-5 left-6 text-4xl">{project.icon}</div>
+          {/* Project image */}
+          <div className="relative h-48 overflow-hidden bg-[#f5f5f7]">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
 
             {/* Category badge */}
-            <div className="absolute top-5 right-5">
-              <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
+            <div className="absolute top-5 right-5 z-10">
+              <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-xs font-semibold">
                 {project.category}
               </span>
             </div>
@@ -208,7 +187,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
-              className="absolute inset-0 bg-black/20 flex items-center justify-center"
+              className="absolute inset-0 bg-black/30 flex items-center justify-center z-10"
             >
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
                 <ArrowUpRight size={20} className="text-[#1d1d1f]" />
@@ -216,7 +195,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             </motion.div>
 
             {/* Location */}
-            <span className="relative text-white/70 text-xs font-medium">
+            <span className="absolute bottom-4 left-5 z-10 text-white/80 text-xs font-medium drop-shadow">
               {project.location}
             </span>
           </div>
