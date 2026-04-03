@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -11,9 +12,8 @@ const projects = [
     description:
       "Professional taxation and business advisory firm in Australia — tax planning, annual returns, and financial growth strategies for individuals and SMBs.",
     tags: ["WordPress", "Tax Advisory", "Finance"],
-    gradient: "from-blue-600 via-blue-700 to-indigo-800",
     category: "Professional Services",
-    icon: "💰",
+    image: "/spark_taxation.png",
     featured: true,
     url: "https://sparktaxation.com.au/",
   },
@@ -22,9 +22,8 @@ const projects = [
     description:
       "Full-featured trucking website for a Cambridge, Ontario freight company — FTL/LTL shipping, temperature-controlled transport, and specialized hauling across Canada.",
     tags: ["WordPress", "Fleet Management", "Freight"],
-    gradient: "from-slate-600 via-gray-600 to-slate-800",
     category: "Logistics",
-    icon: "🚛",
+    image: "/Randhawa_Trucking_inc.png",
     featured: false,
     url: "https://randhawatruckinginc.ca/",
   },
@@ -33,9 +32,8 @@ const projects = [
     description:
       "Family dental practice in Stoney Creek, Ontario — online booking, direct insurance billing, evening and weekend appointments, and a full service menu for all ages.",
     tags: ["WordPress", "Booking", "Healthcare"],
-    gradient: "from-teal-400 via-cyan-500 to-sky-500",
     category: "Healthcare",
-    icon: "🦷",
+    image: "/Dentistry.png",
     featured: false,
     url: "https://dentistryatqueenston.ca/",
   },
@@ -44,9 +42,8 @@ const projects = [
     description:
       "Health and fitness Shopify store in India selling authentic protein powders, mass gainers, and supplements from Indian and international brands.",
     tags: ["Shopify", "E-Commerce", "Health & Fitness"],
-    gradient: "from-orange-500 via-amber-500 to-yellow-400",
     category: "E-Commerce",
-    icon: "💪",
+    image: "/feclitious_nutrition.png",
     featured: true,
     url: "https://felicitousnutrition.com/",
   },
@@ -66,28 +63,19 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         transition={{ duration: 0.25, ease: "easeOut" }}
         className="group relative bg-white rounded-3xl overflow-hidden border border-[#d2d2d7] shadow-sm hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
       >
-        {/* Project image / gradient */}
-        <div
-          className={`relative h-52 bg-gradient-to-br ${project.gradient} flex items-end p-6 overflow-hidden`}
-        >
-          {/* Abstract grid pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id={`grid-${index}`} width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill={`url(#grid-${index})`} />
-            </svg>
-          </div>
-
-          {/* Icon */}
-          <div className="absolute top-5 left-6 text-4xl">{project.icon}</div>
+        {/* Project image */}
+        <div className="relative h-52 overflow-hidden bg-[#f5f5f7]">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
 
           {/* Category badge */}
-          <div className="absolute top-5 right-5">
-            <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
+          <div className="absolute top-5 right-5 z-10">
+            <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-xs font-semibold">
               {project.category}
             </span>
           </div>
@@ -96,7 +84,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           <motion.div
             initial={{ opacity: 0 }}
             whileHover={{ opacity: 1 }}
-            className="absolute inset-0 bg-black/20 flex items-center justify-center"
+            className="absolute inset-0 bg-black/30 flex items-center justify-center z-10"
           >
             <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
               <ArrowUpRight size={20} className="text-[#1d1d1f]" />
