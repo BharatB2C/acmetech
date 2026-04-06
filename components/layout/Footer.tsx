@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <img src="/logo.svg" alt="Acme Technologies" className="h-10 w-auto brightness-0 invert" />
+              <img src="/logo.svg" alt="Acme Technologies" className="h-14 w-auto brightness-0 invert" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Building scalable digital products for startups and growing businesses across Canada and beyond.
