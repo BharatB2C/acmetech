@@ -124,7 +124,7 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 cursor-pointer" onClick={closeAll}>
-            <img src="/logo.svg" alt="Acme Technologies" className="h-10 w-auto" />
+            <img src="/logo.svg" alt="Acme Technologies" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop nav */}
