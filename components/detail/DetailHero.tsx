@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
 
 interface DetailHeroProps {
@@ -10,6 +11,7 @@ interface DetailHeroProps {
   description: string;
   gradient: string;
   emoji?: string;
+  heroImage?: string;
   accentColor?: string;
   cta1?: { label: string; href: string };
   cta2?: { label: string; href: string };
@@ -22,6 +24,7 @@ export default function DetailHero({
   description,
   gradient,
   emoji,
+  heroImage,
   cta1 = { label: "Get a Quote", href: "/#contact" },
   cta2 = { label: "View Portfolio", href: "/#portfolio" },
   variant = "service",
@@ -99,36 +102,48 @@ export default function DetailHero({
             transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="hidden lg:flex items-center justify-center"
           >
-            <div
-              className={`relative w-full max-w-sm aspect-square rounded-3xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-2xl overflow-hidden`}
-            >
-              {/* Grid pattern overlay */}
-              <div className="absolute inset-0 opacity-10">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#hero-grid)" />
-                </svg>
+            {heroImage ? (
+              <div className="relative w-full max-w-sm aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src={heroImage}
+                  alt={name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1200px) 50vw, 384px"
+                />
               </div>
+            ) : (
+              <div
+                className={`relative w-full max-w-sm aspect-square rounded-3xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-2xl overflow-hidden`}
+              >
+                {/* Grid pattern overlay */}
+                <div className="absolute inset-0 opacity-10">
+                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#hero-grid)" />
+                  </svg>
+                </div>
 
-              {/* Central icon/emoji */}
-              <div className="text-center text-white relative z-10">
-                {emoji ? (
-                  <div className="text-8xl mb-4">{emoji}</div>
-                ) : (
-                  <div className="w-24 h-24 rounded-2xl bg-white/20 mx-auto mb-4" />
-                )}
-                <p className="text-xl font-bold opacity-90">{name}</p>
-              </div>
+                {/* Central icon/emoji */}
+                <div className="text-center text-white relative z-10">
+                  {emoji ? (
+                    <div className="text-8xl mb-4">{emoji}</div>
+                  ) : (
+                    <div className="w-24 h-24 rounded-2xl bg-white/20 mx-auto mb-4" />
+                  )}
+                  <p className="text-xl font-bold opacity-90">{name}</p>
+                </div>
 
-              {/* Floating decorative cards */}
-              <div className="absolute -bottom-2 -left-2 bg-white/10 backdrop-blur-sm rounded-2xl px-4 py-2 border border-white/20">
-                <p className="text-white text-xs font-semibold">Acme Technologies</p>
+                {/* Floating decorative cards */}
+                <div className="absolute -bottom-2 -left-2 bg-white/10 backdrop-blur-sm rounded-2xl px-4 py-2 border border-white/20">
+                  <p className="text-white text-xs font-semibold">Acme Technologies</p>
+                </div>
               </div>
-            </div>
+            )}
           </motion.div>
         </div>
       </div>

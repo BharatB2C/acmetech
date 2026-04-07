@@ -137,7 +137,7 @@ export default function Portfolio() {
 
         <AnimatedSection delay={0.3} className="mt-12 text-center">
           <p className="text-[#6e6e73] text-sm mb-4">
-            Want to see all 13 of our client projects?
+            Want to see all 23 of our client projects?
           </p>
           <a
             href="/portfolio"

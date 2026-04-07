@@ -137,9 +137,99 @@ const projects = [
     image: "/deep_brar.png",
     url: "https://deepbrar.ca/",
   },
+  {
+    title: "InnProfessionals",
+    location: "United States",
+    description:
+      "Hospitality management SaaS platform with booking, staff scheduling, and revenue tracking built on WordPress and a custom REST API — helping hotels and inns streamline operations.",
+    tags: ["WordPress", "REST API", "React", "PostgreSQL"],
+    category: "Professional",
+    image: "/innprofessional.png",
+    url: "#",
+  },
+  {
+    title: "Headless Shopify Store",
+    location: "United States",
+    description:
+      "Next.js + Shopify Storefront API headless build for a fashion brand delivering sub-1-second load times, a premium browsing experience, and full SEO control.",
+    tags: ["Shopify", "Next.js", "TypeScript", "Tailwind"],
+    category: "E-Commerce",
+    image: "/headless-shopify-store.png",
+    url: "#",
+  },
+  {
+    title: "Shopify E-Commerce Store",
+    location: "Canada",
+    description:
+      "Full-featured Shopify store with a custom Liquid theme, curated product catalogue, optimized checkout, and integrated payment gateways for a seamless customer journey.",
+    tags: ["Shopify", "Liquid", "E-Commerce"],
+    category: "E-Commerce",
+    image: "/shopify-ecoomerce-store.png",
+    url: "#",
+  },
+  {
+    title: "Shopify Custom App",
+    location: "Canada",
+    description:
+      "Custom Shopify app enabling merchants to sync inventory across multiple warehouses in real time, with analytics dashboards and automated low-stock alerts.",
+    tags: ["Shopify API", "React", "Node.js"],
+    category: "E-Commerce",
+    image: "/shopify-custom -app.png",
+    url: "#",
+  },
+  {
+    title: "Enterprise CRM",
+    location: "Canada",
+    description:
+      "Bespoke CRM system with pipeline tracking, two-way email integration, team collaboration tools, and advanced reporting dashboards built for a mid-market sales team.",
+    tags: ["Laravel", "Vue.js", "MySQL", "REST API"],
+    category: "Professional",
+    image: "/enterprise-crm.png",
+    url: "#",
+  },
+  {
+    title: "Real Estate Portal",
+    location: "Canada",
+    description:
+      "Custom property listing portal with advanced search filters, MLS integration, agent profiles, mortgage calculators, and a lead capture system built on WordPress.",
+    tags: ["WordPress", "PHP", "ACF", "REST API"],
+    category: "Professional",
+    image: "/real-estate-portal.png",
+    url: "#",
+  },
+  {
+    title: "Professional Services Landing Page",
+    location: "Canada",
+    description:
+      "Single-page static site for a consulting firm — hero section, service highlights, social proof, and a contact form — loading in under 0.6 seconds from a global CDN.",
+    tags: ["HTML", "CSS", "JavaScript", "Netlify"],
+    category: "Professional",
+    image: "/professional-services-landing-page.png",
+    url: "#",
+  },
+  {
+    title: "Restaurant & Café Website",
+    location: "Canada",
+    description:
+      "Five-page static website for a local restaurant group featuring the full menu, photo gallery, online reservations link, Google Maps integration, and mobile-first design.",
+    tags: ["HTML", "CSS", "JavaScript", "Vercel"],
+    category: "Lifestyle",
+    image: "/restaurrent&cafe-website.png",
+    url: "#",
+  },
+  {
+    title: "Datum 51",
+    location: "Canada",
+    description:
+      "Data analytics and business intelligence platform with custom reporting dashboards, interactive data visualizations, and automated insight delivery for enterprise clients.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Analytics"],
+    category: "Professional",
+    image: "/datum-51.png",
+    url: "#",
+  },
 ];
 
-const categories = ["All", "Professional", "Healthcare", "Lifestyle", "Logistics & Trade"];
+const categories = ["All", "Professional", "E-Commerce", "Healthcare", "Lifestyle", "Logistics & Trade"];
 
 interface ProjectCardProps {
   project: (typeof projects)[0];
