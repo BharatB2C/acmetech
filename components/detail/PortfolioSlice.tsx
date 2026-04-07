@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { type PortfolioItem } from "@/lib/data/services";
@@ -22,31 +23,46 @@ export default function PortfolioSlice({ items }: PortfolioSliceProps) {
           {items.map((item, i) => (
             <AnimatedSection key={item.title} delay={i * 0.08}>
               <div className="group relative bg-white rounded-3xl overflow-hidden border border-[#d2d2d7] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                {/* Gradient image area */}
-                <div
-                  className={`relative h-44 bg-gradient-to-br ${item.gradient} flex items-end p-5 overflow-hidden`}
-                >
-                  {/* SVG grid */}
-                  <div className="absolute inset-0 opacity-10">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                      <defs>
-                        <pattern
-                          id={`pg-${i}`}
-                          width="40"
-                          height="40"
-                          patternUnits="userSpaceOnUse"
-                        >
-                          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-                        </pattern>
-                      </defs>
-                      <rect width="100%" height="100%" fill={`url(#pg-${i})`} />
-                    </svg>
+                {/* Image or gradient area */}
+                {item.image ? (
+                  <div className="relative h-44 overflow-hidden bg-[#f5f5f7]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <span className="absolute bottom-3 left-4 z-10 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-xs font-semibold">
+                      {item.category}
+                    </span>
                   </div>
-                  <div className="absolute top-4 left-5 text-3xl">{item.icon}</div>
-                  <span className="relative z-10 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
-                    {item.category}
-                  </span>
-                </div>
+                ) : (
+                  <div
+                    className={`relative h-44 bg-gradient-to-br ${item.gradient} flex items-end p-5 overflow-hidden`}
+                  >
+                    {/* SVG grid */}
+                    <div className="absolute inset-0 opacity-10">
+                      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <pattern
+                            id={`pg-${i}`}
+                            width="40"
+                            height="40"
+                            patternUnits="userSpaceOnUse"
+                          >
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill={`url(#pg-${i})`} />
+                      </svg>
+                    </div>
+                    <div className="absolute top-4 left-5 text-3xl">{item.icon}</div>
+                    <span className="relative z-10 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-semibold">
+                      {item.category}
+                    </span>
+                  </div>
+                )}
 
                 {/* Content */}
                 <div className="p-5">

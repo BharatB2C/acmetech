@@ -27,6 +27,7 @@ export interface PortfolioItem {
   gradient: string;
   icon: string;
   category: string;
+  image?: string;
 }
 
 export interface PricingTier {
@@ -194,6 +195,7 @@ const services: ServiceData[] = [
         gradient: "from-cyan-500 to-teal-600",
         icon: "💼",
         category: "Landing Page",
+        image: "/professional-services-landing-page.png",
       },
       {
         title: "Restaurant & Café Website",
@@ -203,6 +205,7 @@ const services: ServiceData[] = [
         gradient: "from-orange-400 to-pink-500",
         icon: "🍽️",
         category: "Business Website",
+        image: "/restaurrent&cafe-website.png",
       },
       {
         title: "Creative Portfolio",
@@ -453,6 +456,7 @@ const services: ServiceData[] = [
         gradient: "from-blue-500 to-indigo-700",
         icon: "💼",
         category: "SaaS Platform",
+        image: "/InnProfessionals.png",
       },
       {
         title: "Real Estate Portal",
@@ -462,6 +466,7 @@ const services: ServiceData[] = [
         gradient: "from-teal-500 to-cyan-600",
         icon: "🏠",
         category: "Web Application",
+        image: "/real-estate-portal.png",
       },
     ],
     pricing: [
@@ -670,6 +675,7 @@ const services: ServiceData[] = [
         gradient: "from-green-500 to-emerald-600",
         icon: "🛍️",
         category: "Shopify App",
+        image: "/shopify-custom -app.png",
       },
       {
         title: "Headless Shopify Store",
@@ -679,6 +685,7 @@ const services: ServiceData[] = [
         gradient: "from-teal-500 to-green-600",
         icon: "👗",
         category: "E-Commerce",
+        image: "/headless-shopify-store.png",
       },
       {
         title: "E-Commerce Platform",
@@ -688,6 +695,7 @@ const services: ServiceData[] = [
         gradient: "from-orange-500 to-yellow-500",
         icon: "🛒",
         category: "Shopify Plus",
+        image: "/shopify-ecoomerce-store.png",
       },
     ],
     pricing: [
@@ -897,6 +905,7 @@ const services: ServiceData[] = [
         gradient: "from-blue-500 to-indigo-700",
         icon: "💼",
         category: "SaaS Platform",
+        image: "/InnProfessionals.png",
       },
       {
         title: "Enterprise CRM",
@@ -906,6 +915,7 @@ const services: ServiceData[] = [
         gradient: "from-purple-500 to-violet-600",
         icon: "📊",
         category: "Custom CRM",
+        image: "/enterprise-crm.jpg",
       },
       {
         title: "Data Integration Platform",

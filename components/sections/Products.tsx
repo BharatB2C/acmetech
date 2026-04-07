@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowUpRight, FileText, Users, Database } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -17,6 +18,7 @@ const products = [
     gradient: "from-blue-500 to-blue-600",
     bg: "bg-blue-50",
     iconColor: "text-blue-600",
+    image: "/innprofessional.png",
     href: "/products/inn-professionals",
   },
   {
@@ -30,6 +32,7 @@ const products = [
     gradient: "from-purple-500 to-violet-600",
     bg: "bg-purple-50",
     iconColor: "text-purple-600",
+    image: "/team_connect.png",
     href: "/products/teamconnect",
   },
   {
@@ -43,6 +46,7 @@ const products = [
     gradient: "from-orange-500 to-amber-600",
     bg: "bg-orange-50",
     iconColor: "text-orange-600",
+    image: "/datum-51.png",
     href: "/products/datum51",
   },
 ];
@@ -68,11 +72,27 @@ export default function Products() {
                   className="group h-full flex flex-col rounded-3xl border border-[#d2d2d7] bg-white overflow-hidden"
                 >
                   {/* Header */}
-                  <div className={`bg-gradient-to-br ${product.gradient} p-6 text-white`}>
-                    <div className="text-3xl mb-3">{product.emoji}</div>
-                    <h3 className="text-xl font-bold">{product.name}</h3>
-                    <p className="text-sm opacity-80 mt-1">{product.tagline}</p>
-                  </div>
+                  {product.image ? (
+                    <div className="relative h-44 overflow-hidden bg-[#f5f5f7]">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-5">
+                        <h3 className="text-xl font-bold text-white">{product.name}</h3>
+                        <p className="text-sm text-white/80 mt-0.5">{product.tagline}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={`bg-gradient-to-br ${product.gradient} p-6 text-white`}>
+                      <div className="text-3xl mb-3">{product.emoji}</div>
+                      <h3 className="text-xl font-bold">{product.name}</h3>
+                      <p className="text-sm opacity-80 mt-1">{product.tagline}</p>
+                    </div>
+                  )}
 
                   {/* Body */}
                   <div className="flex-1 p-6 flex flex-col">

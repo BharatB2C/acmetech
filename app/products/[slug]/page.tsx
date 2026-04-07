@@ -93,6 +93,7 @@ export default async function ProductPage({
         description={product.description}
         gradient={product.gradient}
         emoji={product.emoji}
+        heroImage={product.heroImage}
         variant="product"
         cta1={{ label: "Try Free", href: "/#contact" }}
         cta2={{ label: "Book a Demo", href: "/#contact" }}
