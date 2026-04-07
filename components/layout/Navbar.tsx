@@ -15,7 +15,7 @@ const services = [
 ];
 
 const products = [
-  { label: "OnlineFreeInvoice", href: "/products/onlinefreeinvoice", desc: "Invoicing SaaS" },
+  { label: "Inn Professionals", href: "/products/inn-professionals", desc: "Invoicing SaaS" },
   { label: "TeamConnect", href: "/products/teamconnect", desc: "Shift Management" },
   { label: "Datum51", href: "/products/datum51", desc: "Data System" },
 ];
