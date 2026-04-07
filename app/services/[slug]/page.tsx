@@ -88,6 +88,7 @@ export default async function ServicePage({
         tagline={service.tagline}
         description={service.description}
         gradient={service.heroGradient}
+        heroImage={service.heroImage}
         variant="service"
         cta1={{ label: "Get a Quote", href: "/#contact" }}
         cta2={{ label: "View Portfolio", href: "/#portfolio" }}

@@ -55,6 +55,7 @@ export interface ServiceData {
   tagline: string;
   description: string;
   heroGradient: string;
+  heroImage?: string;
   accentColor: string;
   accentBg: string;
   iconName: string;
@@ -78,6 +79,7 @@ const services: ServiceData[] = [
     description:
       "Professionally designed static websites that load instantly, rank well, and never need a database. Perfect for businesses, portfolios, and landing pages that need to look great and perform even better.",
     heroGradient: "from-cyan-500 to-teal-600",
+    heroImage: "/static-web-designing.png",
     accentColor: "text-cyan-400",
     accentBg: "bg-cyan-50",
     iconName: "Monitor",
@@ -315,6 +317,7 @@ const services: ServiceData[] = [
     description:
       "We craft WordPress websites that are fast, secure, and built to rank — from brochure sites to full WooCommerce platforms. Every pixel intentional, every line of code purposeful.",
     heroGradient: "from-blue-500 to-blue-700",
+    heroImage: "/wordpress.png",
     accentColor: "text-blue-400",
     accentBg: "bg-blue-50",
     iconName: "Globe",
@@ -552,6 +555,7 @@ const services: ServiceData[] = [
     description:
       "We build Shopify stores and custom apps that turn browsers into buyers. From headless Shopify frontends to custom apps on the Partner Program, every solution is engineered around your revenue goals.",
     heroGradient: "from-green-500 to-emerald-700",
+    heroImage: "/shopify-development.png",
     accentColor: "text-green-400",
     accentBg: "bg-green-50",
     iconName: "ShoppingBag",
@@ -778,6 +782,7 @@ const services: ServiceData[] = [
     description:
       "When off-the-shelf doesn't fit, we build yours. Full-stack SaaS platforms, enterprise CRMs, data pipelines, and API ecosystems — architected for the scale you're planning, not just the scale you're at.",
     heroGradient: "from-purple-500 to-violet-700",
+    heroImage: "/custom-software-development.png",
     accentColor: "text-purple-400",
     accentBg: "bg-purple-50",
     iconName: "Code2",
