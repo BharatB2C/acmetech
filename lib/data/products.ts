@@ -48,6 +48,7 @@ export interface ProductPricingTier {
 export interface ProductData {
   slug: string;
   name: string;
+  website?: string;
   tagline: string;
   valueProp: string;
   description: string;
@@ -67,11 +68,12 @@ export interface ProductData {
 
 const products: ProductData[] = [
   {
-    slug: "onlinefreeinvoice",
-    name: "OnlineFreeInvoice",
+    slug: "inn-professionals",
+    name: "Inn Professionals",
+    website: "https://innprof.com/",
     tagline: "Invoicing, HR & Projects — All in One",
     valueProp:
-      "Stop juggling spreadsheets and six different apps. OnlineFreeInvoice puts your invoices, team, and projects in one clean workspace.",
+      "Stop juggling spreadsheets and six different apps. Inn Professionals puts your invoices, team, and projects in one clean workspace.",
     description:
       "A complete SaaS platform for freelancers and small businesses — invoicing, HR management, project tracking, expense reports, and team collaboration in one powerful app.",
     gradient: "from-blue-500 to-blue-700",
@@ -82,7 +84,7 @@ const products: ProductData[] = [
       problemStatement:
         "Freelancers and small teams waste 6+ hours per week switching between invoicing tools, HR spreadsheets, project trackers, and expense apps that don't talk to each other — losing money in unbilled time and administrative chaos.",
       solutionStatement:
-        "OnlineFreeInvoice unifies your entire back-office in one platform. Create and send invoices in 60 seconds, track your team's time and attendance, manage project milestones, and report expenses — all connected, all in real time.",
+        "Inn Professionals unifies your entire back-office in one platform. Create and send invoices in 60 seconds, track your team's time and attendance, manage project milestones, and report expenses — all connected, all in real time.",
     },
     features: [
       {
@@ -178,7 +180,7 @@ const products: ProductData[] = [
     testimonials: [
       {
         quote:
-          "OnlineFreeInvoice replaced 4 tools for us. Invoicing, project tracking, expense reports, and basic HR — all in one. Saved us $200/month in subscriptions.",
+          "Inn Professionals replaced 4 tools for us. Invoicing, project tracking, expense reports, and basic HR — all in one. Saved us $200/month in subscriptions.",
         author: "Sarah K.",
         role: "Founder",
         company: "Pixel Studio",
@@ -248,7 +250,7 @@ const products: ProductData[] = [
     ],
     faqs: [
       {
-        question: "Is OnlineFreeInvoice really free?",
+        question: "Is Inn Professionals really free?",
         answer:
           "Yes. The Free tier is genuinely free with no credit card required. It supports up to 3 clients and 5 invoices per month — enough to get started. The Pro plan unlocks unlimited everything for $19/month.",
       },
@@ -274,7 +276,7 @@ const products: ProductData[] = [
       },
     ],
     seo: {
-      title: "OnlineFreeInvoice — Invoicing, HR & Project Management SaaS",
+      title: "Inn Professionals — Invoicing, HR & Project Management SaaS",
       description:
         "Free online invoicing platform with HR management, project tracking, and expense reports. Built for freelancers and small businesses.",
       keywords: [

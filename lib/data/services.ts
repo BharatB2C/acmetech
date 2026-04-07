@@ -789,7 +789,7 @@ const services: ServiceData[] = [
     ],
     overview: {
       heading: "Custom Software Built to Scale With You",
-      body: "Generic software forces your team to adapt to the tool. We build software that adapts to your team. From multi-tenant SaaS platforms with subscription billing to enterprise CRM systems with deep integrations, we architect solutions that fit your exact workflows — and scale as your business grows. We've shipped our own SaaS products (OnlineFreeInvoice, TeamConnect, Datum51), so we understand what it takes to build, launch, and maintain software in production.",
+      body: "Generic software forces your team to adapt to the tool. We build software that adapts to your team. From multi-tenant SaaS platforms with subscription billing to enterprise CRM systems with deep integrations, we architect solutions that fit your exact workflows — and scale as your business grows. We've shipped our own SaaS products (Inn Professionals, TeamConnect, Datum51), so we understand what it takes to build, launch, and maintain software in production.",
     },
     features: [
       {
@@ -865,7 +865,7 @@ const services: ServiceData[] = [
       {
         title: "We Ship Our Own SaaS Products",
         description:
-          "We've built and launched OnlineFreeInvoice, TeamConnect, and Datum51. We know the real challenges of production software because we face them ourselves.",
+          "We've built and launched Inn Professionals, TeamConnect, and Datum51. We know the real challenges of production software because we face them ourselves.",
       },
       {
         title: "Tech Stack Agnostic",

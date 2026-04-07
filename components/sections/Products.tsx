@@ -9,7 +9,7 @@ const products = [
   {
     icon: FileText,
     emoji: "📄",
-    name: "OnlineFreeInvoice",
+    name: "Inn Professionals",
     tagline: "Invoicing & Business Management SaaS",
     description:
       "A complete SaaS platform for freelancers and small businesses — invoicing, HR management, project tracking, expense reports, and team collaboration in one powerful app.",
@@ -17,7 +17,7 @@ const products = [
     gradient: "from-blue-500 to-blue-600",
     bg: "bg-blue-50",
     iconColor: "text-blue-600",
-    href: "/products/onlinefreeinvoice",
+    href: "/products/inn-professionals",
   },
   {
     icon: Users,

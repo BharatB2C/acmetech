@@ -3,7 +3,7 @@ import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 
 const footerLinks = {
   company: [
-    { label: "About Us", href: "#" },
+    { label: "About Us", href: "/about" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Contact", href: "/contact" },
     { label: "Get Started", href: "/get-started" },
@@ -15,7 +15,7 @@ const footerLinks = {
     { label: "SaaS Development", href: "/services/custom-development" },
   ],
   products: [
-    { label: "OnlineFreeInvoice", href: "/products/onlinefreeinvoice" },
+    { label: "Inn Professionals", href: "/products/inn-professionals" },
     { label: "TeamConnect", href: "/products/teamconnect" },
     { label: "Datum51", href: "/products/datum51" },
   ],
@@ -97,8 +97,8 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <p>© {new Date().getFullYear()} Acme Technologies Inc. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-gray-400 transition-colors">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-gray-400 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
