@@ -53,6 +53,7 @@ export interface ProductData {
   valueProp: string;
   description: string;
   gradient: string;
+  heroImage?: string;
   accentColor: string;
   emoji: string;
   problem: { heading: string; problemStatement: string; solutionStatement: string };
@@ -77,6 +78,7 @@ const products: ProductData[] = [
     description:
       "A complete SaaS platform for freelancers and small businesses — invoicing, HR management, project tracking, expense reports, and team collaboration in one powerful app.",
     gradient: "from-blue-500 to-blue-700",
+    heroImage: "/innprofessional.png",
     accentColor: "text-blue-400",
     emoji: "📄",
     problem: {
@@ -298,6 +300,7 @@ const products: ProductData[] = [
     description:
       "A comprehensive team management platform for scheduling shifts, coordinating staff, tracking attendance, and keeping teams connected — built for businesses with flexible workforces.",
     gradient: "from-purple-500 to-violet-700",
+    heroImage: "/team_connect.png",
     accentColor: "text-purple-400",
     emoji: "👥",
     problem: {
@@ -514,6 +517,7 @@ const products: ProductData[] = [
     description:
       "A powerful data integration platform that connects your disparate systems via webhooks and pull-based data pipelines — enabling real-time data flow across your entire tech stack.",
     gradient: "from-orange-500 to-amber-600",
+    heroImage: "/datum-51.png",
     accentColor: "text-orange-400",
     emoji: "🔗",
     problem: {
